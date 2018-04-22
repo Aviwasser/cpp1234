@@ -10,32 +10,30 @@ private:
     
 public:
     /* Variable */
-    int min_range; 
-    int max_range;
-    int current_range;
+    int first; 
+    int last;
+    int temp;
     /* Constructor */
-    CircularInt(int min , int max);
-    CircularInt(const CircularInt& other);
-    /* Arithmetic operators */
-    CircularInt& operator=(const int num);
-    CircularInt& operator=(const CircularInt& c);
-    friend const CircularInt operator+(const int num , const CircularInt& c);
-    friend const CircularInt operator+(const CircularInt& c , const int num);
-    friend const CircularInt operator+(CircularInt const& c1 , CircularInt const& c2);
-    friend const CircularInt operator-(const int num , CircularInt const& c);
-    friend const CircularInt operator-(const CircularInt& c , const int num);
-    friend const CircularInt operator-(const CircularInt& c1 , const CircularInt& c2);
+    CircularInt(int , int);
+    CircularInt(CircularInt&);
+    CircularInt& operator=(int);
+    CircularInt& operator=(CircularInt&);
+    friend const CircularInt operator+(int, CircularInt&);
+    friend const CircularInt operator+(CircularInt&, int);
+    friend const CircularInt operator+(CircularInt const&, CircularInt const&);
+    friend const CircularInt operator-(int, CircularInt const&);
+    friend const CircularInt operator-(CircularInt&, int);
+    friend const CircularInt operator-(CircularInt& , CircularInt&);
     CircularInt operator-();
-    friend const CircularInt operator*(const CircularInt& c , const int num);
-    friend const CircularInt operator*(const int num , const CircularInt& c);
-    friend const CircularInt operator/(CircularInt const& c , const int num);
-    friend const CircularInt operator%(const CircularInt& c , const int num);
+    friend const CircularInt operator*(CircularInt& , int);
+    friend const CircularInt operator*(int, CircularInt& );
+    friend const CircularInt operator/(CircularInt const& , int);
+    friend const CircularInt operator%(CircularInt&, const int);
     CircularInt& operator++();
-    CircularInt operator++(const int other);
+    CircularInt operator++(int);
     CircularInt& operator--();
-    CircularInt operator--(const int other);
-    /* Comparison operators */
-    friend bool operator==(const CircularInt c1 , const CircularInt c2);
+    CircularInt operator--(int);
+    friend bool operator==(CircularInt, CircularInt );
     friend bool operator!=(const CircularInt c1 , const CircularInt c2); 
     friend bool operator>(const CircularInt c1 , const CircularInt c2); 
     friend bool operator<(const CircularInt c1 , const CircularInt c2);  
