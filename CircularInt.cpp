@@ -1,29 +1,28 @@
 #include "CircularInt.hpp"
 /* Constructor */
-CircularInt::CircularInt(int min , int max)
+CircularInt::CircularInt(int fiRst , int laSt)
 {
-    min_range = min;
-    max_range = max;
-    current_range = min;
+    first = fiRst;
+    last=laSt;
+    temp = fiRst;
 };
 CircularInt::CircularInt(const CircularInt& other)
 {
-    min_range = other.min_range;
-    max_range = other.max_range;
-    current_range = other.current_range;
+    first = other.first;
+    last = other.last;
+    temp = other.temp;
 };
-/* Arithmetic operators */
-CircularInt& CircularInt::operator=(const int num)
+CircularInt& CircularInt::operator=( int n)
 {
-    this->current_range = num;
-    (*this) += 0;
+   // this->temp = num;
+    //(*this) += 0;
     return *this;
 }
 CircularInt& CircularInt::operator=(const CircularInt& c)
 {
-    this-> min_range = c.min_range;
-    this->max_range = c.max_range;
-    this->current_range = c.current_range;
+   // this-> min_range = c.min_range;
+   // this->max_range = c.max_range;
+   // this->current_range = c.current_range;
     return *this;
 }
 const CircularInt operator+(const int num,const CircularInt& c )
@@ -162,23 +161,12 @@ CircularInt& CircularInt::operator*=(const CircularInt& other)
 }
 CircularInt& CircularInt::operator/=(const int num)
 {
-  /*  if(current_range % num == 0)
-    {
-
-    }
-    else 
-    {
-        stringstream ss;
-        string s = ss.str();
-        throw s;
-    }*/
     return *this;
 }
 CircularInt& CircularInt::operator%=(const int other)
 {
     return *this;
 }
-/* IOstream */
 ostream& operator<< (ostream& os ,CircularInt const& obj)
 {
     return os;
