@@ -13,8 +13,9 @@ public:
     int first; 
     int last;
     int temp;
-    CircularInt(int , int);
-    CircularInt(CircularInt& other);
+    CircularInt(int min , int max);
+    CircularInt(const CircularInt& other);
+    /* Arithmetic operators */
     CircularInt& operator=(const int num);
     CircularInt& operator=(const CircularInt& c);
     friend const CircularInt operator+(const int num , const CircularInt& c);
