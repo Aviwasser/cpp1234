@@ -101,7 +101,7 @@ CircularInt& CircularInt::operator++()
 }
 CircularInt CircularInt::operator++(const int other)
 {
-    //CircularInt copy(*this);
+    CircularInt copy(*this);
     //++(*this);
     return copy;
 }
