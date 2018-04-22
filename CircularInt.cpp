@@ -96,104 +96,104 @@ const CircularInt operator%(const CircularInt& c , const int num)
 }
 CircularInt& CircularInt::operator++()
 {
-    (*this) += 1;
+    //(*this) += 1;
     return *this;
 }
 CircularInt CircularInt::operator++(const int other)
 {
-    CircularInt copy(*this);
-    ++(*this);
+    //CircularInt copy(*this);
+    //++(*this);
     return copy;
 }
 CircularInt& CircularInt::operator--()
 {
-    (*this) -= 1;
+    //(*this) -= 1;
     return *this;
 }
 CircularInt CircularInt::operator--(const int other)
 {
-    CircularInt copy(*this);
-    --(*this);
+    //CircularInt copy(*this);
+    //--(*this);
     return copy;
 }
 /* Comparison operators */
 bool operator==(const CircularInt c1 , const CircularInt c2)
 {
-    return c1.current_range == c2.current_range
+    return 0/*c1.current_range == c2.current_range
         && c1.max_range == c2.max_range &&
-        c1.min_range == c2.min_range;
+        c1.min_range == c2.min_range;*/
 }
 bool operator!=(const CircularInt c1 , const CircularInt c2)
 {
-    return !(c1 == c2);
+    return 0//!(c1 == c2);
 }
 bool operator>(const CircularInt c1 , const CircularInt c2)
 {
-    return c1.current_range > c2.current_range
+    return 0/*c1.current_range > c2.current_range
         && c1.max_range == c2.max_range &&
-        c1.min_range == c2.min_range;
+        c1.min_range == c2.min_range;*/
 }
 bool operator<(const CircularInt c1 , const CircularInt c2)
 {
-    return c1.current_range < c2.current_range
+    return 0/*c1.current_range < c2.current_range
         && c1.max_range == c2.max_range &&
-        c1.min_range == c2.min_range;
+        c1.min_range == c2.min_range;*/
 }
 bool operator>=(const CircularInt c1 , const CircularInt c2)
 {
-    return c1 == c2 || c1 > c2;
+    return 0//c1 == c2 || c1 > c2;
 }
 bool operator<=(const CircularInt c1 , const CircularInt c2)
 {
-    return c1 == c2 || c1 < c2;
+    return 1//c1 == c2 || c1 < c2;
 }
 /* Compound assignment operators */
 CircularInt& CircularInt::operator+=(const int other)
 {
-    current_range += other;
-    while(current_range > max_range)
-        current_range -= (max_range-min_range+1);
-    while(current_range < min_range)
-        current_range += (max_range-min_range+1);
+ //   current_range += other;
+   // while(current_range > max_range)
+     //   current_range -= (max_range-min_range+1);
+    //while(current_range < min_range)
+      //  current_range += (max_range-min_range+1);
     return *this;
 }
 CircularInt& CircularInt::operator+=(const CircularInt& other)
 {
-    (*this) += other.current_range;
+    //(*this) += other.current_range;
     return *this;
 }
 CircularInt& CircularInt::operator-=(const int other)
 {
-    (*this) += (-1)*other;
+   // (*this) += (-1)*other;
     return *this;
 }
 CircularInt& CircularInt::operator-=(const CircularInt& other)
 {
-    (*this) -= other.current_range;
+   // (*this) -= other.current_range;
     return *this;
 }
 CircularInt& CircularInt::operator*=(const int other)
 {
-    current_range *= other;
-    (*this) += 0;
+  //  current_range *= other;
+  //  (*this) += 0;
     return *this;
 }
 CircularInt& CircularInt::operator*=(const CircularInt& other)
 {
-    (*this) *= other.current_range;
+   // (*this) *= other.current_range;
     return *this;
 }
 CircularInt& CircularInt::operator/=(const int num)
 {
     if(current_range % num == 0)
     {
-        current_range /= num;
-        (*this) += 0;
+      //  current_range /= num;
+     //   (*this) += 0;
     }
     else 
     {
         stringstream ss;
-        ss << "There is no number x in {" << min_range << "," << max_range << "} such that x*" << num << "=" << current_range;
+       // ss << "There is no number x in {" << min_range << "," << max_range << "} such that x*" << num << "=" << current_range;
         string s = ss.str();
         throw s;
     }
@@ -201,19 +201,19 @@ CircularInt& CircularInt::operator/=(const int num)
 }
 CircularInt& CircularInt::operator%=(const int other)
 {
-    current_range %= other;
-    (*this)+=0;
+  //  current_range %= other;
+ //   (*this)+=0;
     return *this;
 }
 /* IOstream */
 ostream& operator<< (ostream& os ,CircularInt const& obj)
 {
-    os << obj.current_range;
+   // os << obj.current_range;
     return os;
 }
 istream& operator>>(istream& input, CircularInt& obj)
 {
-    input >> obj.min_range >> obj.max_range;
-    obj.current_range = obj.min_range;
+//    input >> obj.min_range >> obj.max_range;
+
     return input;
 }
