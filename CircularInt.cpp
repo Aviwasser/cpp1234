@@ -23,7 +23,7 @@ const CircularInt operator+(const int num,const CircularInt& c )
    
     return copy;
 }
-{const CircularInt operator-(const CircularInt& c1 , const CircularInt& c2)
+const CircularInt operator-(const CircularInt& c1 , const CircularInt& c2)
 {
     CircularInt temp(c1);
 
@@ -37,6 +37,7 @@ const CircularInt operator+(const CircularInt& c , const int num)
     return copy;
 }
 const CircularInt operator+(CircularInt const& c1 , CircularInt const& c2)
+{
 
     CircularInt temp(c1);
   
