@@ -1,6 +1,5 @@
-
 #include "CircularInt.hpp"
-
+/* Constructor */
 CircularInt::CircularInt(int min , int max)
 {
     min_range = min;
