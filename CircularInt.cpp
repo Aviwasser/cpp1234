@@ -112,40 +112,40 @@ CircularInt& CircularInt::operator--()
 }
 CircularInt CircularInt::operator--(const int other)
 {
-    //CircularInt copy(*this);
+    CircularInt copy(*this);
     //--(*this);
     return copy;
 }
 /* Comparison operators */
 bool operator==(const CircularInt c1 , const CircularInt c2)
 {
-    return 0/*c1.current_range == c2.current_range
+    return 0;/*c1.current_range == c2.current_range
         && c1.max_range == c2.max_range &&
         c1.min_range == c2.min_range;*/
 }
 bool operator!=(const CircularInt c1 , const CircularInt c2)
 {
-    return 0//!(c1 == c2);
+    return 0;//!(c1 == c2);
 }
 bool operator>(const CircularInt c1 , const CircularInt c2)
 {
-    return 0/*c1.current_range > c2.current_range
+    return 0;/*c1.current_range > c2.current_range
         && c1.max_range == c2.max_range &&
         c1.min_range == c2.min_range;*/
 }
 bool operator<(const CircularInt c1 , const CircularInt c2)
 {
-    return 0/*c1.current_range < c2.current_range
+    return 0;/*c1.current_range < c2.current_range
         && c1.max_range == c2.max_range &&
         c1.min_range == c2.min_range;*/
 }
 bool operator>=(const CircularInt c1 , const CircularInt c2)
 {
-    return 0//c1 == c2 || c1 > c2;
+    return 0;//c1 == c2 || c1 > c2;
 }
 bool operator<=(const CircularInt c1 , const CircularInt c2)
 {
-    return 1//c1 == c2 || c1 < c2;
+    return 1;//c1 == c2 || c1 < c2;
 }
 /* Compound assignment operators */
 CircularInt& CircularInt::operator+=(const int other)
