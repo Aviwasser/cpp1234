@@ -12,17 +12,9 @@ CircularInt::CircularInt(const CircularInt& other)
     last = other.last;
     temp = other.temp;
 };
-CircularInt& CircularInt::operator=( int n)
-{
-   // this->temp = num;
-    //(*this) += 0;
-    return *this;
-}
+
 CircularInt& CircularInt::operator=(const CircularInt& c)
 {
-   // this-> min_range = c.min_range;
-   // this->max_range = c.max_range;
-   // this->current_range = c.current_range;
     return *this;
 }
 const CircularInt operator+(const int num,const CircularInt& c )
@@ -31,6 +23,13 @@ const CircularInt operator+(const int num,const CircularInt& c )
    
     return copy;
 }
+{const CircularInt operator-(const CircularInt& c1 , const CircularInt& c2)
+{
+    CircularInt temp(c1);
+
+    return temp;
+
+}
 const CircularInt operator+(const CircularInt& c , const int num)
 {
     CircularInt copy(c);
@@ -38,60 +37,67 @@ const CircularInt operator+(const CircularInt& c , const int num)
     return copy;
 }
 const CircularInt operator+(CircularInt const& c1 , CircularInt const& c2)
-{
+
     CircularInt temp(c1);
   
     return temp;
 
 }
+CircularInt& CircularInt::operator=( int n)
+{
+    return *this;
+}
 const CircularInt operator-(const int num, CircularInt const& c )
 {
-    CircularInt copy(c);
-
-    return copy;
+    CircularInt cpy(c);
+    return cpy;
 }
 const CircularInt operator-(const CircularInt& c , const int num)
 {
-    CircularInt copy(c);
-
-    return copy;
+    CircularInt cpy(c);
+    return cpy;
 }
-const CircularInt operator-(const CircularInt& c1 , const CircularInt& c2)
-{
-    CircularInt temp(c1);
 
-    return temp;
-
-}
 CircularInt CircularInt::operator-()
 {
-    CircularInt copy(*this);
-
-    return copy;
+    CircularInt cpy(*this);
+    return cpy;
 }
 const CircularInt operator*(const CircularInt& c , const int num)
 {
-    CircularInt copy(c);
-
-    return copy;
+    CircularInt cpy(c);
+    return cpy;
+}
+CircularInt& CircularInt::operator/=(const int num)
+{
+    return *this;
+}
+CircularInt& CircularInt::operator%=(const int other)
+{
+    return *this;
+}
+ostream& operator<< (ostream& os ,CircularInt const& obj)
+{
+    return os;
+}
+istream& operator>>(istream& input, CircularInt& obj)
+{
+    return input;
 }
 const CircularInt operator*(const int num , const CircularInt& c)
 {
-    CircularInt copy(c);
-
-    return copy;
+    CircularInt cpy(c);
+    return cpy;
 }
 const CircularInt operator/(CircularInt const& c , const int num)
 {
-    CircularInt copy(c);
-
-    return copy;
+    CircularInt cpy(c);
+    return cpy;
 }
 const CircularInt operator%(const CircularInt& c , const int num)
 {
-    CircularInt copy(c);
-
-    return copy;
+    CircularInt cpy(c);
+    return cpy;
 }
 CircularInt& CircularInt::operator++()
 {
@@ -99,8 +105,8 @@ CircularInt& CircularInt::operator++()
 }
 CircularInt CircularInt::operator++(const int other)
 {
-    CircularInt copy(*this);
-    return copy;
+    CircularInt cpy(*this);
+    return cpy;
 }
 CircularInt& CircularInt::operator--()
 {
@@ -108,8 +114,8 @@ CircularInt& CircularInt::operator--()
 }
 CircularInt CircularInt::operator--(const int other)
 {
-    CircularInt copy(*this);
-    return copy;
+    CircularInt cpy(*this);
+    return cpy;
 }
 bool operator==(const CircularInt c1 , const CircularInt c2)
 {
@@ -135,15 +141,11 @@ bool operator<=(const CircularInt c1 , const CircularInt c2)
 {
     return 1;
 }
-CircularInt& CircularInt::operator+=(const int other)
-{
-    return *this;
-}
 CircularInt& CircularInt::operator+=(const CircularInt& other)
 {
     return *this;
 }
-CircularInt& CircularInt::operator-=(const int other)
+CircularInt& CircularInt::operator+=(const int other)
 {
     return *this;
 }
@@ -151,6 +153,11 @@ CircularInt& CircularInt::operator-=(const CircularInt& other)
 {
     return *this;
 }
+CircularInt& CircularInt::operator-=(const int other)
+{
+    return *this;
+}
+
 CircularInt& CircularInt::operator*=(const int other)
 {
     return *this;
@@ -158,20 +165,4 @@ CircularInt& CircularInt::operator*=(const int other)
 CircularInt& CircularInt::operator*=(const CircularInt& other)
 {
     return *this;
-}
-CircularInt& CircularInt::operator/=(const int num)
-{
-    return *this;
-}
-CircularInt& CircularInt::operator%=(const int other)
-{
-    return *this;
-}
-ostream& operator<< (ostream& os ,CircularInt const& obj)
-{
-    return os;
-}
-istream& operator>>(istream& input, CircularInt& obj)
-{
-    return input;
 }
